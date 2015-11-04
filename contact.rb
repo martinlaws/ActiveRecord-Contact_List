@@ -1,20 +1,13 @@
 require 'pry'
+require 'active_record'
 
-class Contact
+class Contact < ActiveRecord::Base
 
-  attr_accessor :id, :firstname, :lastname, :email, :phone
+  attr_accessor :firstname, :lastname, :email
 
-  def initialize (id, firstname, lastname, email, phones)
-    @id = id
-    @firstname = firstname
-    @lastname = lastname
-    @email = email
-    @phone = phones
-  end
- 
  # TODO - add ID
   def to_s
-    "ID ##{@id} // #{@lastname}, #{@firstname} // #{@email} // #{phone.join(', ')}"
+    "ID ##{@id} // #{@lastname}, #{@firstname} // #{@email}"
   end
  
   # Class Methods
